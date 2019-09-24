@@ -1,30 +1,34 @@
 #Writtin by Zane&Paxton
 guessCount = 5
 lettersGuessed = []
-sentence = input("Whats the Word: ")
+lettersGuessedstr = ''.join(str(e) for e in lettersGuessed)
+sentence = input("Whats the Word (only lower case please): ")
 print("\n" * 50)
 sentence = sentence.split()
 
-while (guessCount != 0):
+while (guessCount > 0):
+    guess = input("Guess: ")
+    if guess not in lettersGuessed:
+        for word in sentence:
+            if guess in word:
+                print("Thats Right")
+                print("there is a " + guess)
+            elif guess not in word:
+                guessCount - 1
+                print("no " + guess)
+            lettersGuessed.append(guess)
+    elif guess in lettersGuessed:
+        print("you already guessed " + guess)
     for word in sentence:
-        if guess in word:
-            print(guess, end = '')
-        elif print("_")
+        if lettersGuessedstr in word:
+            print(lettersGuessedstr, end = '')
+        elif lettersGuessed not in word:
+            print("_")
     print(" ", end = '')
 print("\n")
-    guess = input("Guess: ")
+    
+#def letterCheck (guess,sentence):
 
-def letterCheck (guess,sentence):
-    for word in sentence:
-        for letter in word:
-            if (guess == letter):
-                print("thats right")
-                print("there is"+ amountLetters + guess)
-        #letter you guessed correct and how many of that letter there are
-            elif (guess != letter):
-                 guessCount - 1
-                 print("no " + guess)
-            lettersGuessed.append(guess)
 
 if (guessCount == 5):
     print("amount of guesses left " + guessCount)
