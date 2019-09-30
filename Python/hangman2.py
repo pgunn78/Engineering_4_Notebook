@@ -14,7 +14,7 @@ while (guessCount > 0):
     guess = input("Guess: ")
     if guess not in lettersGuessed:
         for letter in word:
-            if letter in guess:
+            if guess == letter:
                 lettersCorrect = lettersCorrect + 1
         if lettersCorrect > 0:
             print("Correct There is a " + guess)
@@ -29,4 +29,10 @@ while (guessCount > 0):
             print(letter, end = '')
         elif letter not in lettersGuessed:
             print("_", end = '')
+            gamestate = gamestate + 1
     print("\n")
+    if gamestate == 0:
+        print("You Win!")
+        break
+    print("\n")
+print("Game over")
