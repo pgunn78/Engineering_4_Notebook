@@ -1,0 +1,13 @@
+#!/bin/bash
+# Basic while loop
+gpio mode 0 out
+count=1
+
+while [ $count -le 10 ]
+do
+	gpio write 0 1
+	sleep 1
+	gpio write 0 0
+	sleep 1
+	((count+=1))
+done
