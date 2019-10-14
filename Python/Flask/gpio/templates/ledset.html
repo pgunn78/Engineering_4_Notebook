@@ -4,10 +4,16 @@
 	<title>GPIO with Flask!</title>
 </head>
 <body>
-{{msg}}
-<form action = "http://10.10.55.212:5000/result" method="POST">
+<form action = "/" method="POST">
 <p>Red: <input type="radio" name="red" value="on">On
 <input type="radio" name="red" value="off">Off
+Currently: {{red}}
+<p>Blue: <input type="radio" name="blue" value="on">On
+<input type="radio" name="blue" value="off">Off
+Currently: {{blue}}
+<p>Green: <input type="radio" name="green" value="on">On
+<input type="radio" name="green" value="off">Off
+Currently: {{green}}
 <p><input type="submit" value="submit" /></p>
 </form>
 <body>
