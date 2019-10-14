@@ -9,23 +9,31 @@ GPIO.setup(22,GPIO.OUT)
 
 app = Flask (__name__)
 
-@app.route('/')
-def  ledset():
-	return render_template('ledset.html')
-
-@app.route("/", methods=["GET","Post"])
-def results():
-
+@app.route('/', methods=["GET","Post"])
+def ledset():
+	ledData = {
+		'red' : 'off',
+		'blue' : 'off',
+		'green' : 'off',
+		}
 	if request.method == "POST":
 		red = request.form['red']
 		ledData = {
 			'red' : red,
+			'blue' : blue,
+			'green' : green,
 			}
 		if red == 'on':
 			GPIO.output(17,GPIO.HIGH)
+		if blue == 'on':
+			GPIO.output(27,GPIO.HIGH)
+		if green == 'on':
+			GPIO.output(22,GPIO.HIGH)
 		else:
 			GPIO.output(17,GPIO.LOW)
-       		return render_template("result.html", **ledData)
+			GPIO.output(27,GPIO.LOW)
+			GPIO.output(22,GPIO.LOW)
+       	return render_template('ledset.html', **ledData)
 
 if __name__ == "__main__":
 	app.run(host="0.0.0.0", port=80)
