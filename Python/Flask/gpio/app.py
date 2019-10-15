@@ -18,6 +18,9 @@ def ledset():
 		}
 	if request.method == "POST":
 		red = request.form['red']
+		print(red)
+                blue = request.form['blue']
+                green = request.form['green']
 		ledData = {
 			'red' : red,
 			'blue' : blue,
@@ -25,13 +28,15 @@ def ledset():
 			}
 		if red == 'on':
 			GPIO.output(17,GPIO.HIGH)
+		else:
+			GPIO.output(17,GPIO.LOW)
 		if blue == 'on':
 			GPIO.output(27,GPIO.HIGH)
+		else:
+			GPIO.output(27,GPIO.LOW)
 		if green == 'on':
 			GPIO.output(22,GPIO.HIGH)
 		else:
-			GPIO.output(17,GPIO.LOW)
-			GPIO.output(27,GPIO.LOW)
 			GPIO.output(22,GPIO.LOW)
        	return render_template('ledset.html', **ledData)
 
