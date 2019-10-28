@@ -39,15 +39,15 @@ while True:
     time.sleep(0.5)
     
     accel_z = round(accel_z/101.936, 2)
-    accel_x = round(accel_x/101.936, 2)
-    accel_y = round(accel_y/101.936, 2)
+    accel_x = (round(accel_x/101.936, 2) * 5)+64
+    accel_y = (round(accel_y/101.936, 2) * 5)+64
     
-    draw.rectangle((0,0,width,height), outline=0, fill=0)
-      
-    draw.text((x, top),    'ACCEL DATA',  font=font, fill=255)
-    draw.text((x, top+20), 'Accel X =' + str(accel_x) + 'm/s^2', font=font, fill=255)
-    draw.text((x, top+30), 'Accel Y =' + str(accel_y) + 'm/s^2', font=font, fill=255)
-    draw.text((x, top+40), 'Accel Z =' + str(accel_z) + 'm/s^2', font=font, fill=255)
-
+    draw.ellipse((accel_x-5, accel_y+5, accel_x-5, accel_y+5), outline=255)
+    
+    draw.line((64, bottom, 64, top), fill=255)
+    draw.line((0, 32, 128, 32), fill=255)
+    
     disp.image(image)
     disp.display()
+    
+    draw.rectangle((0,0,width,height), outline=0, fill=0)
