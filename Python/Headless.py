@@ -33,16 +33,15 @@ while True:
     # Grab the X, Y, Z components from the reading and print them out.
     accel_x, accel_y, accel_z = accel
     mag_x, mag_y, mag_z = mag
-    print('Accel X={0}, Accel Y={1}, Accel Z={2}, Mag X={3}, Mag Y={4}, Mag Z={5}'.format(
+    print('accel X={0}, accel Y={1}, Mag X={3}, Mag Y={4}'.format(
           accel_x, accel_y, accel_z, mag_x, mag_y, mag_z))
     # Wait half a second and repeat.
     time.sleep(0.5)
     
-    accel_z = round(accel_z/101.936, 2)
-    accel_x = (round(accel_x/101.936, 2) * 5)+64
-    accel_y = (round(accel_y/101.936, 2) * 5)+64
+    accel_x = (round(accel_x/101.936, 0) * 3)+32
+    accel_y = (round(accel_y/101.936, 0) * 5)+64
     
-    draw.ellipse((accel_x-5, accel_y+5, accel_x-5, accel_y+5), outline=255)
+    draw.ellipse((accel_y-5, accel_x-5, accel_y+5, accel_x+5), outline=255)
     
     draw.line((64, bottom, 64, top), fill=255)
     draw.line((0, 32, 128, 32), fill=255)
