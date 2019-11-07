@@ -33,7 +33,7 @@ while True:
     # Grab the X, Y, Z components from the reading and print them out.
     accel_x, accel_y, accel_z = accel
     mag_x, mag_y, mag_z = mag
-    print('accel X={0}, accel Y={1}, Mag X={3}, Mag Y={4}'.format(
+    print('Accel X={0}, Accel Y={1}, Mag X={3}, Mag Y={4}'.format(
           accel_x, accel_y, accel_z, mag_x, mag_y, mag_z))
     # Wait half a second and repeat.
     time.sleep(0.5)
@@ -49,4 +49,4 @@ while True:
     disp.image(image)
     disp.display()
     
-    draw.rectangle((0,0,width,height), outline=0, fill=0)
+    draw.rectangle((0,0,width,height), outline=0, fill=0)raspstill - k
