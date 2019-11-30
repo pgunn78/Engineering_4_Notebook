@@ -44,7 +44,7 @@ while True:
     
     draw.rectangle((0,0,width,height), outline=0, fill=0)  # wipes the screen befor the values update
       
-    draw.text((x, top),    'ACCEL DATA',  font=font, fill=255) # writes the nice values out to the screen so we can see the preety letters and numbers
+    draw.text((x, top),    'ACCEL DATA',  font=font, fill=255) # writes the nice values out to the screen
     draw.text((x, top+20), 'Accel X =' + str(accel_x) + 'm/s^2', font=font, fill=255)
     draw.text((x, top+30), 'Accel Y =' + str(accel_y) + 'm/s^2', font=font, fill=255)
     draw.text((x, top+40), 'Accel Z =' + str(accel_z) + 'm/s^2', font=font, fill=255)
