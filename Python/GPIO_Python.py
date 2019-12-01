@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 from time import sleep # all the librarys
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)# it likes to through warnings that mean jack didley
+GPIO.setwarnings(False)# turns warnings off
 GPIO.setup(17,GPIO.OUT)
 count = 0 
 
