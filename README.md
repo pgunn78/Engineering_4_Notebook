@@ -70,4 +70,33 @@ print("Modulo:\t\t" + doMath(a,b,5))
 ```
 ## Python Program - Quadratic Solver
 Create a new program called "Quadratic_Solver"
-habe the program print a message asking the user to enter the coefficents a,b, and c to solve for the roots
+have the program print a message asking the user to enter the coefficents a,b, and c to solve for the roots
+create three inputs for each coefficent
+define a function that will check how many real roots the quadratic equation has and if there are no roots than print "no real roots" and if there are roots find them through the quadratic formula and append them to a array and return that array
+then print every element of that array
+```
+#Written By Zane&Paxton
+import math
+print("Quadratic Solver\nEnter the coefficients for ax^2 +bx +c = 0")
+
+a = float(input('a: '))
+b = float(input('b: '))
+c = float(input('c: '))
+
+def findRoots (a,b,c):
+    Des = (b**2) - (4*a*c)
+    roots = []
+    if (Des < 0):
+        print("no real roots")
+    elif (Des >= 0):
+        root1 = (-b+math.sqrt(Des))/(2*a)
+        root2 = (-b-math.sqrt(Des))/(2*a)
+    roots.append(root1)
+    roots.append(root2)
+    return roots
+
+Quadratic = findRoots(a,b,c)
+print("Here are your roots:")
+for x in Quadratic:
+    print(x)
+```
