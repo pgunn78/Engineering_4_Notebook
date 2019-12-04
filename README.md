@@ -100,3 +100,45 @@ print("Here are your roots:")
 for x in Quadratic:
     print(x)
 ```
+
+## Hello Git
+using the mkdir command in the terminal make a new directory named "Engineering_4_Nothebook
+initiate github using the git init command
+set up a github account using school username and password
+set up email and name in the Raspberry Pi
+open up the README for the Engineering 4 repository and add a breif description
+git add the previous python assignments and commit
+add remote server address to Pi
+push to the origin master
+and make a new directory named "Python"
+move the previous assignments to this
+
+## Git Forks and Clones
+open git hub and click on the fork button in the Class_Accounts repository
+now clone the repository with 
+```
+git clone https://github.com/<your GitHub Username>/Class_Accounts.git
+```
+open up the freshly cloned repository and edit the README
+write name and intresting fact and save and close 
+create a pull request by clicking on the new pull request button in github
+and wait for doctor sheilds approval
+
+## Python Program - Strings and Loops
+create a new program
+add a input named sentance and variable equal to sentance.split()
+this will split the input the user puts in wherever there is a space
+create a nested for statment that goes through every word in words and every letter in word printing the letter
+on every space print a - by placing it outside the nested for loop
+```
+#Paxton&Zane
+
+sentance = input("what do you want to say  ")
+words = sentance.split()
+
+for word in words:
+    for letter in word:
+        print(letter)
+    print("-")
+```
+## Python Challendge - MSP
