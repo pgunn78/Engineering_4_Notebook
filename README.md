@@ -185,7 +185,7 @@ while (guessCount > 0):
         elif lettersCorrect == 0:
                 print("wrong there is no " + guess)
                 guessCount = guessCount - 1
-        lettersGuessed = lettersGuessed + guess # breaks the words into leters then checks to see if your guess is one of those 
+        lettersGuessed = lettersGuessed + guess 
     elif guess in lettersGuessed:
         print("you already guessed " + guess) # if you already guessed a letter wont let you do it again
     for letter in word:
