@@ -205,3 +205,32 @@ if guessCount == 0:
 if guessCount == 0:
     print("You Lose") # the losing screen
 ```
+
+## GPIO pins - Bash
+Create a new program
+import the RPI.GPIO library as the GPIO pin layout to allow the pin numbers to make mor sense
+from the time library import the sleep function
+set the GPIO pens to the BCM layout
+set warnings equal to false (fake warnings tend to be thrown)
+set GPIO pin 17 to an output
+set up counter (for amount of times led has blinked)
+make a while statment for when counter less than ten add the following underneath it
+make the counter blink on for one second then off for one second
+add plus one to counter at the end of the loop to allow it to count up properly
+```
+#Written by Paxton&Zane
+import RPi.GPIO as GPIO
+from time import sleep # all the librarys
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)# turns warnings off
+GPIO.setup(17,GPIO.OUT)
+count = 0 
+
+while count < 10: # self explanitory just writes on and off ten times 
+    GPIO.output(17, GPIO.HIGH)
+    sleep(1)
+    GPIO.output(17, GPIO.LOW)
+    sleep(1)
+    count = count + 1
+```
