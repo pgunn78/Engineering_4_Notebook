@@ -206,7 +206,7 @@ if guessCount == 0:
     print("You Lose") # the losing screen
 ```
 
-## GPIO pins - Bash
+## GPIO pins - Python
 Create a new program
 import the RPI.GPIO library as the GPIO pin layout to allow the pin numbers to make mor sense
 from the time library import the sleep function
@@ -234,3 +234,5 @@ while count < 10: # self explanitory just writes on and off ten times
     sleep(1)
     count = count + 1
 ```
+
+## GPIO pins - SSH
