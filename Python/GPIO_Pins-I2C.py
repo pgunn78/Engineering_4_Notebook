@@ -37,13 +37,13 @@ while True:
           accel_x, accel_y, accel_z, mag_x, mag_y, mag_z))
     # Wait half a second and repeat.
     time.sleep(0.5)
-    
+
     accel_z = round(accel_z/101.936, 2)
     accel_x = round(accel_x/101.936, 2)
     accel_y = round(accel_y/101.936, 2)
-    
+
     draw.rectangle((0,0,width,height), outline=0, fill=0)
-      
+
     draw.text((x, top),    'ACCEL DATA',  font=font, fill=255)
     draw.text((x, top+20), 'Accel X =' + str(accel_x) + 'm/s^2', font=font, fill=255)
     draw.text((x, top+30), 'Accel Y =' + str(accel_y) + 'm/s^2', font=font, fill=255)
