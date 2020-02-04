@@ -2,7 +2,7 @@
 guessCount = 6
 lettersGuessed = ''
 word = input("Whats the Word (only lower case please): ")
-print("\n" * 50)
+print("\n" * 50) # allows you to type in a word then clears the screen
 
 
 while (guessCount > 0):
@@ -20,7 +20,7 @@ while (guessCount > 0):
     if guessCount == 2:
         print("   ------  \n   |    |  \n   |    0  \n   |   /|\ \n   |       \n-------      ")
     if guessCount == 1:
-        print("   ------  \n   |    |  \n   |    0  \n   |   /|\ \n   |   /   \n-------      ")
+        print("   ------  \n   |    |  \n   |    0  \n   |   /|\ \n   |   /   \n-------      ")# draws the hangeman 
     
     guess = input("Guess: ")
     if guess not in lettersGuessed:
@@ -32,22 +32,22 @@ while (guessCount > 0):
         elif lettersCorrect == 0:
                 print("wrong there is no " + guess)
                 guessCount = guessCount - 1
-        lettersGuessed = lettersGuessed + guess
+        lettersGuessed = lettersGuessed + guess # breaks the words into leters then checks to see if your guess is one of those 
     elif guess in lettersGuessed:
-        print("you already guessed " + guess)
+        print("you already guessed " + guess) # if you already guessed a letter wont let you do it again
     for letter in word:
         if letter in lettersGuessed:
             print(letter, end = '')
         elif letter not in lettersGuessed:
             print("_", end = '')
-            gameState = gameState + 1
+            gameState = gameState + 1 
     print("\n")
     if gameState == 0:
         print("You Win!")
-        break
+        break # above decied if you win or lose then breaks itself off if you lost
 
 print("\n" * 50)
 if guessCount == 0:
         print("   ------  \n   |    |  \n   |    0  \n   |   /|\ \n   |   / \ \n-------      ")
 if guessCount == 0:
-    print("You Lose")
+    print("You Lose") # the losing screen
