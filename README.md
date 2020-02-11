@@ -236,3 +236,25 @@ while count < 10: # self explanitory just writes on and off ten times
 ```
 
 ## GPIO pins - SSH
+
+## hello flask
+
+Import flask library
+make a flask app called app
+make request to this directory spit out hello world
+make the code run the app
+make app visible to other computers using (0.0.0.0)
+
+```
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hellow_world():
+	return "hello world!"
+
+if __name__ == "__main__":
+	app.run(host="0.0.0.0", port=80)
+
+```
