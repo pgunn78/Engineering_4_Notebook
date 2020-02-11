@@ -239,11 +239,11 @@ while count < 10: # self explanitory just writes on and off ten times
 
 ## hello flask
 
-Import flask library
-make a flask app called app
-make request to this directory spit out hello world
-make the code run the app
-make app visible to other computers using (0.0.0.0)
+Import flask library.
+make a flask app called app.
+make request to this directory spit out hello world.
+make the code run the app.
+make app visible to other computers using (0.0.0.0).
 
 ```
 from flask import Flask
