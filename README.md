@@ -15,6 +15,9 @@ echo $str
 
 save using the ctrl O and exit using ctrl X run the code with the bash command
 
+#### comments
+there similar ports on the side of the raspberry pi for power and monitor output which we breifly confused but it didn't damage the pi and was eaily fixed by switching the wires
+
 ## Hello Python
 Open up Python using Thonny or Python 3
 comment "written by Zane & Paxton" and "Dice Roller" at the top using #
@@ -35,6 +38,10 @@ while(choice != "x"):
     print(random.randint(1,6))# generataes a randome number between one and six and print it
     choice = input() 
 ```
+
+
+#### comments
+as this was our first time accessing python on the raspberry pi we went first into thonney as it was easier to access than python 3 but we found that it also ran alot slower on the raspberry pi and would take awhile to compile
 
 ## Python Program - Calculator
 Create a new program name it "Calculator"
@@ -68,6 +75,10 @@ print("Product:\t\t" + doMath(a,b,3))
 print("Quotient:\t\t" + doMath(a,b,4))
 print("Modulo:\t\t" + doMath(a,b,5))
 ```
+
+#### comments
+while most of the operations we were doing were fairly simple to write out. We both did not know the syntax for rounding to the second digit, and we had some difficulties printing our results before turning into a string 
+
 ## Python Program - Quadratic Solver
 Create a new program called "Quadratic_Solver"
 have the program print a message asking the user to enter the coefficents a,b, and c to solve for the roots
@@ -101,17 +112,23 @@ for x in Quadratic:
     print(x)
 ```
 
+#### comments
+similarly to our trouble with the rounding operation we also had some trouble finding how to square a number eventually solving it by importing the math library
+
 ## Hello Git
 using the mkdir command in the terminal make a new directory named "Engineering_4_Nothebook
 initiate github using the git init command
 set up a github account using school username and password
 set up email and name in the Raspberry Pi
-open up the README for the Engineering 4 repository and add a breif description
+open up the README for the Engineering 4 repository and add a brief description
 git add the previous python assignments and commit
 add remote server address to Pi
 push to the origin master
 and make a new directory named "Python"
 move the previous assignments to this
+
+#### Comments
+not to difficult were able to do this relativly quickly but never linked this account to our other account
 
 ## Git Forks and Clones
 open git hub and click on the fork button in the Class_Accounts repository
@@ -122,7 +139,10 @@ git clone https://github.com/<your GitHub Username>/Class_Accounts.git
 open up the freshly cloned repository and edit the README
 write name and intresting fact and save and close 
 create a pull request by clicking on the new pull request button in github
-and wait for doctor sheilds approval
+and wait for doctor Shields approval
+
+#### Comments
+we actually had a lot of difficulty with this specific assignment and I'm not entirely sure why. We had some trouble locating the readme file and once we had it open we didn't realize what that the horizontal lines actually were how to create a table with values. 
 
 ## Python Program - Strings and Loops
 create a new program
@@ -141,6 +161,11 @@ for word in words:
         print(letter)
     print("-")
 ```
+
+
+#### Comments
+super cool nested for loops not to much trouble here either
+
 ## Python Challendge - MSP
 create a new program 
 add a input named word this will be the word that player 2 must guess a empty array named letters guessed to keep track of letters already guessed by player 2 and a variable named guessCount which will end the game when it reaches 0
@@ -206,9 +231,21 @@ if guessCount == 0:
     print("You Lose") # the losing screen
 ```
 
+#### Comments
+alot of the problems that we faced when doing this assignment had to do with where a statment was placed in our for loop and if statment structure with some of the if statments not doing what they were supposed to do because they were never being referenced in the code apart from this the creation of the hangman out of dashs was also a little confusing and probably could have been done in less lines of code rather than having to create a if statment in each stage of the counter.
+
+## GPIO pins - Bash
+solder pins onto the back of the raspberry pi and plug them into a T-cobbler, this functions much like a pcie extension cable used for graphics cards
+plug cables into pin 17 and ground and connect a led and 220 ohm resistor as a pull down resistor
+write the command "gpio mode 0 out" in the terminal which will set pin 17 as a output
+turn on the pin using "gpio write 0 1"
+
+#### Comments
+soldering male headers was fun had to go back and do a few but were mostly easy and made good connections to the headers and pads
+
 ## GPIO pins - Python
 Create a new program
-import the RPI.GPIO library as the GPIO pin layout to allow the pin numbers to make mor sense
+import the RPI.GPIO library as the GPIO pin layout to allow the pin numbers to make more sense
 from the time library import the sleep function
 set the GPIO pens to the BCM layout
 set warnings equal to false (fake warnings tend to be thrown)
@@ -235,7 +272,19 @@ while count < 10: # self explanitory just writes on and off ten times
     count = count + 1
 ```
 
+#### comments
+no problems here
+
 ## GPIO pins - SSH
+
+Open up the Terminal
+type hostname -I and get the pi's IP address
+turn on SSH or secure shell
+download a secure shell app ona chromebook or internet connected device and type in the given Ip address
+then type the same commands as in the Bash assignment "gpio 0 out" and "gpio write 0 1"
+
+#### Comments
+one thing that suprised us a little in this assignment was that not every time but occasionaly the Ip address would change for our pi and not let us connect to it wo we had to just make sure we had the right IP address when connecting which isn't to much of a hassle
 
 ## hello flask
 
@@ -258,6 +307,9 @@ if __name__ == "__main__":
 	app.run(host="0.0.0.0", port=80)
 
 ```
+
+#### Comments
+no problems here
 
 ## GPIO Pins - Flask
 
@@ -318,61 +370,8 @@ if __name__ == "__main__":
 	app.run(host="0.0.0.0", port=80)
 ```
 
+#### Comments
+not to difficult alot of copy and pasting and had some trouble just getting the syntax right on everything especially when any mistake was repeated three times
+
 ## GPIO Pins - 12C
-```
-import time
-import Adafruit_LSM303
-import Adafruit_GPIO.SPI as SPI
-import Adafruit_SSD1306
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont # all of the librarys
 
-lsm303 = Adafruit_LSM303.LSM303()
-RST = 24
-disp = Adafruit_SSD1306.SSD1306_128_32(rst=RST)
-disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST, i2c_address=0x3d) # lets the display actullay work and communicate
-
-disp.begin()
-disp.clear()
-disp.display() # clears and starts up the display
-
-width = disp.width
-height = disp.height
-image = Image.new('1', (width, height))
-draw = ImageDraw.Draw(image)
-font = ImageFont.load_default()
-padding = 2
-shape_width = 20
-top = padding
-bottom = height-padding
-x = padding # all the math required to draw the preety pictures we want
-
-
-while True:
-
-
-    # Read the X, Y, Z axis acceleration values and print them.
-    accel, mag = lsm303.read()
-    # Grab the X, Y, Z components from the reading and print them out.
-    accel_x, accel_y, accel_z = accel
-    mag_x, mag_y, mag_z = mag
-    print('Accel X={0}, Accel Y={1}, Mag X={3}, Mag Y={4}'.format(
-          accel_x, accel_y, accel_z, mag_x, mag_y, mag_z))
-    # Wait half a second and repeat.
-    time.sleep(0.5)
-    
-    accel_x = (round(accel_x/101.936, 0) * 3)+32 # gets all the values into ms^2 then makes sure they are the right format
-    accel_y = (round(accel_y/101.936, 0) * 5)+64
-    
-    draw.ellipse((accel_y-5, accel_x-5, accel_y+5, accel_x+5), outline=255) # draws the circle that represents the "buble" in our level
-    
-    draw.line((64, bottom, 64, top), fill=255) 
-    draw.line((0, 32, 128, 32), fill=255) # draws a centerline on the verticle and horizontal axis
-    
-    disp.image(image)
-    disp.display() # makes sure everything actually shows up.
-    
-    draw.rectangle((0,0,width,height), outline=0, fill=0)raspstill - k # wipes the screen
-   ```
-the main challenges we faced with this project was geting the circle to move and figuring out the size we wanted it to be. we also faced problems with the bubble "floating" in a realistic way all of these problems we solved by just changing variables we already had, reuploading, fixing things, and then reapeating the process. eventually we got to a perfectly round buble of a good size that would 'float up" like an actual level.
