@@ -314,7 +314,9 @@ def index():
                 msg = "No click yet."
         return render_template("index.html", msg=msg)
 
-
 if __name__ == "__main__":
 	app.run(host="0.0.0.0", port=80)
 ```
+
+## GPIO Pins - 12C
+
