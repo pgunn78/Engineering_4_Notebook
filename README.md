@@ -319,7 +319,7 @@ if __name__ == "__main__":
 ```
 
 ## GPIO Pins - 12C
-
+```
 import time
 import Adafruit_LSM303
 import Adafruit_GPIO.SPI as SPI
@@ -351,7 +351,7 @@ x = padding # all the math required to draw the preety pictures we want
 
 while True:
 
-```
+
     # Read the X, Y, Z axis acceleration values and print them.
     accel, mag = lsm303.read()
     # Grab the X, Y, Z components from the reading and print them out.
@@ -375,4 +375,4 @@ while True:
     
     draw.rectangle((0,0,width,height), outline=0, fill=0)raspstill - k # wipes the screen
    ```
- the main challenges we faced with this project was geting the circle to move and figuring out the size we wanted it to be. we also faced problems with the bubble "floating" in a realistic way all of these problems we solved by just changing variables we already had, reuploading, fixing things, and then reapeating the process. eventually we got to a perfectly round buble of a good size that would 'float up" like an actual level.
+the main challenges we faced with this project was geting the circle to move and figuring out the size we wanted it to be. we also faced problems with the bubble "floating" in a realistic way all of these problems we solved by just changing variables we already had, reuploading, fixing things, and then reapeating the process. eventually we got to a perfectly round buble of a good size that would 'float up" like an actual level.
